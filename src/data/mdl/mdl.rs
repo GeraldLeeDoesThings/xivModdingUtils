@@ -1,6 +1,6 @@
 use std::path::Path;
 
-use crate::data::{model_modifiers::ModelImportOptions, tt_model::TexToolsModel};
+use crate::data::{model_modifiers::ModelImportOptions, textools_model::TexToolsModel};
 
 
 #[repr(u8)]
@@ -15,10 +15,11 @@ pub enum EMeshFlags1 {
     DustOcclusionEnabled = 0x80,
 }
 
-pub fn load_external_model(path: Path) -> Error<TexToolsModel, &'static str> {
+pub fn load_external_model(path: &Path) -> Result<TexToolsModel, &'static str> {
     let options = ModelImportOptions::new();
     let suffix = path.extension().ok_or("Path has no extension!")?;
     if suffix.eq("db") {
         todo!()
     }
+    todo!()
 }

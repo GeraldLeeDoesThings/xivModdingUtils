@@ -1,21 +1,21 @@
-use super::races::XivRace;
+use super::{races::XivRace, textools_model::TexToolsModel};
 
 pub struct ModelImportOptions {
-    copy_attributes: bool,
-    copy_materials: bool,
-    shift_import_uv: bool,
-    clone_uv2: bool,
-    auto_scale: bool,
-    use_imported_tangents: bool,
-    source_race: XivRace,
-    target_race: XivRace,
-    reference_item: (), // TODO: Implement
-    validate_materials: bool,
-    source_application: Option<String>,
-    clear_empty_mesh_data: bool,
-    auto_assign_heels: bool,
-    logging_function: (),      // TODO: Implement
-    intermediary_function: (), // TODO: Implement
+    pub copy_attributes: bool,
+    pub copy_materials: bool,
+    pub shift_import_uv: bool,
+    pub clone_uv2: bool,
+    pub auto_scale: bool,
+    pub use_imported_tangents: bool,
+    pub source_race: XivRace,
+    pub target_race: XivRace,
+    pub reference_item: (), // TODO: Implement
+    pub validate_materials: bool,
+    pub source_application: Option<String>,
+    pub clear_empty_mesh_data: bool,
+    pub auto_assign_heels: bool,
+    pub logging_function: (),      // TODO: Implement
+    pub intermediary_function: (), // TODO: Implement
 }
 
 impl ModelImportOptions {

@@ -2,7 +2,6 @@ use std::path::Path;
 
 use crate::data::{model_modifiers::ModelImportOptions, textools_model::TexToolsModel};
 
-
 #[repr(u8)]
 pub enum EMeshFlags1 {
     ShadowDisabled = 0x01,

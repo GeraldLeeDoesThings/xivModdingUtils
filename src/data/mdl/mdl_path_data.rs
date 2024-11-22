@@ -1,4 +1,3 @@
-
 pub struct MdlPathData {
     pub path_count: usize,
     pub path_block_size: usize,

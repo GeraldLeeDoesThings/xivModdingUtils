@@ -1,4 +1,3 @@
-
 pub fn normalize_bytes<const L: usize>(bytes: &mut [u8; L], target: f64) {
     let current: f64 = bytes.iter().map(|byte| *byte as f64).sum();
     let scalar = target / current;

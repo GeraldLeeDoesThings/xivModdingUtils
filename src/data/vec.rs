@@ -6,12 +6,12 @@ macro_rules! impl_common_vec {
     ($name:ty) => {
         impl<T: Sized> Index<usize> for $name {
             type Output = T;
-        
+
             fn index(&self, index: usize) -> &Self::Output {
                 &self.data[index]
             }
         }
-        
+
         impl<T: Sized> IndexMut<usize> for $name {
             fn index_mut(&mut self, index: usize) -> &mut Self::Output {
                 &mut self.data[index]
@@ -43,16 +43,11 @@ impl<T: Sized + Copy + Div<T, Output = O>, O> Div<T> for &Vec3<T> {
     type Output = Vec3<O>;
 
     fn div(self, rhs: T) -> Self::Output {
-        Vec3::new(
-            self[0] / rhs,
-            self[1] / rhs,
-            self[2] / rhs
-        )
+        Vec3::new(self[0] / rhs, self[1] / rhs, self[2] / rhs)
     }
 }
 
 impl<T: Sized + Copy + Mul<T, Output = T>> MulAssign<T> for Vec3<T> {
-    
     fn mul_assign(&mut self, rhs: T) {
         for i in 0..3 {
             self.data[i] = self.data[i] * rhs;
@@ -62,7 +57,9 @@ impl<T: Sized + Copy + Mul<T, Output = T>> MulAssign<T> for Vec3<T> {
 
 impl<T: PartialEq> PartialEq for Vec3<T> {
     fn eq(&self, other: &Self) -> bool {
-        self.data[0] == other.data[0] && self.data[1] == other.data[1] && self.data[2] == other.data[2]
+        self.data[0] == other.data[0]
+            && self.data[1] == other.data[1]
+            && self.data[2] == other.data[2]
     }
 }
 

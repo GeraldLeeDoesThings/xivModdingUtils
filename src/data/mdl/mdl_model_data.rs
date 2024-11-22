@@ -1,6 +1,5 @@
 use super::mdl::EMeshFlags1;
 
-
 pub struct MdlModelData {
     pub radius: f32,
     mesh_count: u16,
@@ -16,4 +15,3 @@ pub struct MdlModelData {
     flags1: EMeshFlags1,
     // TODO: The rest
 }
-
